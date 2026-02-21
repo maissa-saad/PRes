@@ -1,0 +1,30 @@
+{
+  "entity": [
+    {
+      "id": 0,
+      "model": "cloud",
+      "mytag": "cloud",
+      "IPT": 5000000000,
+      "RAM": 40000,
+      "COST": 3,
+      "WATT": 20.0
+    },
+    {
+      "id": 1,
+      "model": "edge-device",
+      "mytag": "edge",
+      "IPT": 100000000,
+      "RAM": 4000,
+      "COST": 3,
+      "WATT": 40.0
+    }
+  ],
+  "link": [
+    {
+      "s": 0,
+      "d": 1,
+      "BW": 1,
+      "PR": 10
+    }
+  ]
+}
