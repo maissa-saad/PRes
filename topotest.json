@@ -1,0 +1,66 @@
+{
+  "entity": [
+    {
+      "id": 0,
+      "model": "cloud",
+      "mytag": "cloud",
+      "IPT": 100000000,
+      "RAM": 40000,
+      "COST": 3,
+      "WATT": 20.0
+    },
+    {
+      "id": 1,
+      "model": "edge",
+      "mytag": "edge",
+      "IPT": 100000000000,
+      "RAM": 40000,
+      "COST": 3,
+      "WATT": 20.0
+    },
+    {
+      "id": 2,
+      "model": "sensor-device",
+      "mytag": "sensor-device",
+      "IPT": 100000000,
+      "RAM": 4000,
+      "COST": 3,
+      "WATT": 40.0
+    },
+    {
+      "id": 3,
+      "model": "actuator-device",
+      "mytag": "actuator-device",
+      "IPT": 100000000,
+      "RAM": 4000,
+      "COST": 3,
+      "WATT": 40.0
+    }
+  ],
+  "link": [
+    {
+      "s": 2,
+      "d": 0,
+      "BW": 10,
+      "PR": 1
+    },
+    {
+      "s": 0,
+      "d": 3,
+      "BW": 10,
+      "PR": 10
+    } ,
+    {
+      "s": 2,
+      "d": 1,
+      "BW": 10,
+      "PR": 2
+    },
+    {
+      "s": 1,
+      "d": 3,
+      "BW": 10,
+      "PR": 10
+    }
+  ]
+}
