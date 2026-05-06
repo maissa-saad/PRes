@@ -74,8 +74,8 @@ def create_application():
                    {"Actuator": {"Type": Application.TYPE_SINK}}
                    ])
     
-    m_a = Message("M.A", "Sensor", "ServiceA", instructions=600000000, bytes=1000)
-    m_b = Message("M.B", "ServiceA", "Actuator", instructions=10000000, bytes=500)
+    m_a = Message("M.A", "Sensor", "ServiceA", instructions=800000000, bytes=1000)
+    m_b = Message("M.B", "ServiceA", "Actuator", instructions=1000000, bytes=500)
 
     a.add_source_messages(m_a)
     

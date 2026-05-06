@@ -3,30 +3,30 @@
     {"id":0,"model":"sensor-device","mytag":"sensor-device","IPT":100000000,"RAM":4000,"COST":1,"WATT":42.0},
     {"id":1,"model":"actuator-device","mytag":"actuator-device","IPT":100000000,"RAM":4000,"COST":1,"WATT":38.0},
 
-    {"id":2,"model":"edge","mytag":"edge","IPT":29000000,"RAM":4000,"COST":1,"WATT":29},
-    {"id":3,"model":"edge","mytag":"edge","IPT":31000000,"RAM":4000,"COST":1,"WATT":30},
-    {"id":4,"model":"edge","mytag":"edge","IPT":30500000,"RAM":4000,"COST":1,"WATT":30},
-    {"id":5,"model":"edge","mytag":"edge","IPT":29500000,"RAM":4000,"COST":1,"WATT":29},
-    {"id":6,"model":"edge","mytag":"edge","IPT":30000000,"RAM":4000,"COST":1,"WATT":30},
+    {"id":2,"model":"edge","mytag":"edge","IPT":89000000,"RAM":4000,"COST":1,"WATT":11},
+    {"id":3,"model":"edge","mytag":"edge","IPT":81000000,"RAM":4000,"COST":1,"WATT":18},
+    {"id":4,"model":"edge","mytag":"edge","IPT":80500000,"RAM":4000,"COST":1,"WATT":20},
+    {"id":5,"model":"edge","mytag":"edge","IPT":89500000,"RAM":4000,"COST":1,"WATT":10},
+    {"id":6,"model":"edge","mytag":"edge","IPT":80000000,"RAM":4000,"COST":1,"WATT":12},
 
-    {"id":7,"model":"fog","mytag":"fog","IPT":58000000,"RAM":8000,"COST":1,"WATT":31},
-    {"id":8,"model":"fog","mytag":"fog","IPT":62000000,"RAM":8000,"COST":1,"WATT":29},
-    {"id":9,"model":"fog","mytag":"fog","IPT":60000000,"RAM":8000,"COST":1,"WATT":30},
-    {"id":10,"model":"fog","mytag":"fog","IPT":61000000,"RAM":8000,"COST":1,"WATT":30},
-    {"id":11,"model":"fog","mytag":"fog","IPT":59000000,"RAM":8000,"COST":1,"WATT":29},
+    {"id":7,"model":"fog","mytag":"fog","IPT":158000000,"RAM":8000,"COST":1,"WATT":51},
+    {"id":8,"model":"fog","mytag":"fog","IPT":162000000,"RAM":8000,"COST":1,"WATT":79},
+    {"id":9,"model":"fog","mytag":"fog","IPT":160000000,"RAM":8000,"COST":1,"WATT":80},
+    {"id":10,"model":"fog","mytag":"fog","IPT":161000000,"RAM":8000,"COST":1,"WATT":60},
+    {"id":11,"model":"fog","mytag":"fog","IPT":159000000,"RAM":8000,"COST":1,"WATT":69},
 
-    {"id":12,"model":"cloud","mytag":"cloud","IPT":148000000,"RAM":32000,"COST":1,"WATT":32},
-    {"id":13,"model":"cloud","mytag":"cloud","IPT":152000000,"RAM":32000,"COST":1,"WATT":31},
-    {"id":14,"model":"cloud","mytag":"cloud","IPT":150000000,"RAM":32000,"COST":1,"WATT":30},
-    {"id":15,"model":"cloud","mytag":"cloud","IPT":155000000,"RAM":32000,"COST":1,"WATT":31},
-    {"id":16,"model":"cloud","mytag":"cloud","IPT":149000000,"RAM":32000,"COST":1,"WATT":30}
+    {"id":12,"model":"cloud","mytag":"cloud","IPT":348000000,"RAM":32000,"COST":1,"WATT":132},
+    {"id":13,"model":"cloud","mytag":"cloud","IPT":352000000,"RAM":32000,"COST":1,"WATT":133},
+    {"id":14,"model":"cloud","mytag":"cloud","IPT":350000000,"RAM":32000,"COST":1,"WATT":120},
+    {"id":15,"model":"cloud","mytag":"cloud","IPT":355000000,"RAM":32000,"COST":1,"WATT":131},
+    {"id":16,"model":"cloud","mytag":"cloud","IPT":349000000,"RAM":32000,"COST":1,"WATT":135}
   ],
   "link":[
     { "s": 0, "d": 2, "BW": 120, "PR": 1   },
     { "s": 1, "d": 2, "BW": 110, "PR": 1 },
 
     { "s": 2, "d": 7, "BW": 6, "PR": 2 },
-    { "s": 7, "d": 12, "BW": 18, "PR":  4 },
+    { "s": 7, "d": 12, "BW": 18, "PR": 4 },
 
     { "s": 2, "d": 3, "BW": 95, "PR": 1 },
     { "s": 2, "d": 4, "BW": 100, "PR": 1 },

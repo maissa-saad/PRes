@@ -9,12 +9,11 @@ class MinimumLatenceNBd(Selection):
     def __init__(self, node_load):
         super().__init__()
         self.node_load = node_load
-        self.b=0
-        self.bb=0
+
 
     def get_path(self, sim, app_name, message, topology_src, alloc_DES, alloc_module, traffic,from_des):
         if (message.name=="M.A"): 
-            alpha = 1 #consommation énergétique
+            alpha = 5#consommation énergétique
 
             node_src = topology_src
             DES_dst = alloc_module[app_name][message.dst] 
@@ -36,20 +35,20 @@ class MinimumLatenceNBd(Selection):
 
                 ipt=sim.topology.G.nodes[dst_node]["IPT"]
                 ipt_utilise=self.node_load[dst_node]
-                ipt_effectif = max(ipt - ipt_utilise, 1)
+                ipt_effectif = max(ipt - ipt_utilise, 800000)
                 score = latence_somme + message.inst/(ipt_effectif) + alpha*energie
 
                 if score < bestScore:
                     bestScore = score
                     bestPath = [path]   
                     bestDES = [des]            
-            #print("best:",bestPath[-1][-1],"  ",bestScore)
-            self.node_load[bestPath[-1][-1]]+=20*10**6
+            print("best:",bestPath[-1][-1],"  ",bestScore)
+            self.node_load[bestPath[-1][-1]]+=800000000
             return bestPath, bestDES
         
         else:
             node_src = topology_src
-            self.node_load[node_src]-=20*10**6
+            self.node_load[node_src]-=800000000
             DES_dst = alloc_module[app_name][message.dst] 
 
             bestScore = float("inf")
