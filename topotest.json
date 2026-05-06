@@ -22,7 +22,7 @@
       "id": 2,
       "model": "sensor-device",
       "mytag": "sensor-device",
-      "IPT": 100000000,
+      "IPT": 1000000000,
       "RAM": 4000,
       "COST": 3,
       "WATT": 40.0
@@ -31,7 +31,7 @@
       "id": 3,
       "model": "actuator-device",
       "mytag": "actuator-device",
-      "IPT": 100000000,
+      "IPT": 1000000000,
       "RAM": 4000,
       "COST": 3,
       "WATT": 40.0
@@ -41,26 +41,26 @@
     {
       "s": 2,
       "d": 0,
-      "BW": 10,
+      "BW": 100000,
       "PR": 1
     },
     {
       "s": 0,
       "d": 3,
-      "BW": 10,
-      "PR": 10
+      "BW": 100000,
+      "PR": 1
     } ,
     {
       "s": 2,
       "d": 1,
-      "BW": 10,
-      "PR": 2
+      "BW": 100000,
+      "PR": 0
     },
     {
       "s": 1,
       "d": 3,
-      "BW": 10,
-      "PR": 10
+      "BW": 100000,
+      "PR": 0
     }
   ]
 }

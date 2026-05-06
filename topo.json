@@ -1,48 +1,62 @@
 {
   "entity": [
-    {"id": 0, "model": "cloud", "mytag": "cloud", "IPT": 5000000000, "RAM": 40000, "COST": 3, "WATT": 20.0},
-    {"id": 1, "model": "cloud", "mytag": "cloud", "IPT": 5000000000, "RAM": 40000, "COST": 3, "WATT": 20.0},
-    {"id": 2, "model": "cloud", "mytag": "cloud", "IPT": 5000000000, "RAM": 40000, "COST": 3, "WATT": 20.0},
-    {"id": 3, "model": "cloud", "mytag": "cloud", "IPT": 5000000000, "RAM": 40000, "COST": 3, "WATT": 20.0},
-    {"id": 4, "model": "cloud", "mytag": "cloud", "IPT": 5000000000, "RAM": 40000, "COST": 3, "WATT": 20.0},
-    
-    {"id": 5, "model": "edge", "mytag": "edge", "IPT": 1000000000, "RAM": 8000, "COST": 2, "WATT": 15.0},
-    {"id": 6, "model": "edge", "mytag": "edge", "IPT": 1000000000, "RAM": 8000, "COST": 2, "WATT": 15.0},
-    {"id": 7, "model": "edge", "mytag": "edge", "IPT": 1000000000, "RAM": 8000, "COST": 2, "WATT": 15.0},
-    {"id": 8, "model": "edge", "mytag": "edge", "IPT": 1000000000, "RAM": 8000, "COST": 2, "WATT": 15.0},
-    {"id": 9, "model": "edge", "mytag": "edge", "IPT": 1000000000, "RAM": 8000, "COST": 2, "WATT": 15.0},
-    
-    {"id": 10, "model": "switch", "mytag": "intermediate", "IPT": 0, "RAM": 0, "COST": 1, "WATT": 5.0},
-    {"id": 11, "model": "switch", "mytag": "intermediate", "IPT": 0, "RAM": 0, "COST": 1, "WATT": 5.0},
-    {"id": 12, "model": "switch", "mytag": "intermediate", "IPT": 0, "RAM": 0, "COST": 1, "WATT": 5.0},
-    {"id": 13, "model": "switch", "mytag": "intermediate", "IPT": 0, "RAM": 0, "COST": 1, "WATT": 5.0},
-    {"id": 14, "model": "sensor-device", "mytag": "sensor-device", "IPT": 100000000, "RAM": 4000, "COST": 1, "WATT": 40.0},
-    {"id": 15, "model": "sensor-device", "mytag": "sensor-device", "IPT": 100000000, "RAM": 4000, "COST": 1, "WATT": 40.0},
-    {"id": 16, "model": "actuator-device", "mytag": "actuator-device", "IPT": 100000000, "RAM": 4000, "COST": 1, "WATT": 40.0},
-    {"id": 17, "model": "actuator-device", "mytag": "actuator-device", "IPT": 100000000, "RAM": 4000, "COST": 1, "WATT": 40.0}
+    {"id":0,"model":"sensor-device","mytag":"sensor-device","IPT":100000000,"RAM":4000,"COST":1,"WATT":42.0},
+    {"id":1,"model":"actuator-device","mytag":"actuator-device","IPT":100000000,"RAM":4000,"COST":1,"WATT":38.0},
+
+    {"id":2,"model":"edge","mytag":"edge","IPT":29000000,"RAM":4000,"COST":1,"WATT":29},
+    {"id":3,"model":"edge","mytag":"edge","IPT":31000000,"RAM":4000,"COST":1,"WATT":30},
+    {"id":4,"model":"edge","mytag":"edge","IPT":30500000,"RAM":4000,"COST":1,"WATT":30},
+    {"id":5,"model":"edge","mytag":"edge","IPT":29500000,"RAM":4000,"COST":1,"WATT":29},
+    {"id":6,"model":"edge","mytag":"edge","IPT":30000000,"RAM":4000,"COST":1,"WATT":30},
+
+    {"id":7,"model":"fog","mytag":"fog","IPT":58000000,"RAM":8000,"COST":1,"WATT":31},
+    {"id":8,"model":"fog","mytag":"fog","IPT":62000000,"RAM":8000,"COST":1,"WATT":29},
+    {"id":9,"model":"fog","mytag":"fog","IPT":60000000,"RAM":8000,"COST":1,"WATT":30},
+    {"id":10,"model":"fog","mytag":"fog","IPT":61000000,"RAM":8000,"COST":1,"WATT":30},
+    {"id":11,"model":"fog","mytag":"fog","IPT":59000000,"RAM":8000,"COST":1,"WATT":29},
+
+    {"id":12,"model":"cloud","mytag":"cloud","IPT":148000000,"RAM":32000,"COST":1,"WATT":32},
+    {"id":13,"model":"cloud","mytag":"cloud","IPT":152000000,"RAM":32000,"COST":1,"WATT":31},
+    {"id":14,"model":"cloud","mytag":"cloud","IPT":150000000,"RAM":32000,"COST":1,"WATT":30},
+    {"id":15,"model":"cloud","mytag":"cloud","IPT":155000000,"RAM":32000,"COST":1,"WATT":31},
+    {"id":16,"model":"cloud","mytag":"cloud","IPT":149000000,"RAM":32000,"COST":1,"WATT":30}
   ],
-  "link": [
-    {"s": 0, "d": 10, "BW": 10, "PR": 5},
-    {"s": 1, "d": 10, "BW": 10, "PR": 5},
-    {"s": 2, "d": 11, "BW": 10, "PR": 5},
-    {"s": 3, "d": 11, "BW": 10, "PR": 5},
-    {"s": 4, "d": 12, "BW": 10, "PR": 5},
-    
-    {"s": 10, "d": 5, "BW": 5, "PR": 1},
-    {"s": 10, "d": 6, "BW": 5, "PR": 1},
-    {"s": 11, "d": 7, "BW": 5, "PR": 1},
-    {"s": 11, "d": 8, "BW": 5, "PR": 1},
-    {"s": 12, "d": 9, "BW": 5, "PR": 1},
-    
-    {"s": 5, "d": 13, "BW": 2, "PR": 2},
-    {"s": 6, "d": 13, "BW": 2, "PR": 2},
-    {"s": 7, "d": 13, "BW": 2, "PR": 2},
-    {"s": 8, "d": 13, "BW": 2, "PR": 2},
-    {"s": 9, "d": 13, "BW": 2, "PR": 2},
-    
-    {"s": 13, "d": 14, "BW": 1, "PR": 10},
-    {"s": 13, "d": 15, "BW": 1, "PR": 10},
-    {"s": 13, "d": 16, "BW": 1, "PR": 10},
-    {"s": 13, "d": 17, "BW": 1, "PR": 10}
+  "link":[
+    { "s": 0, "d": 2, "BW": 120, "PR": 1   },
+    { "s": 1, "d": 2, "BW": 110, "PR": 1 },
+
+    { "s": 2, "d": 7, "BW": 6, "PR": 2 },
+    { "s": 7, "d": 12, "BW": 18, "PR":  4 },
+
+    { "s": 2, "d": 3, "BW": 95, "PR": 1 },
+    { "s": 2, "d": 4, "BW": 100, "PR": 1 },
+    { "s": 2, "d": 5, "BW": 105, "PR": 1 },
+    { "s": 2, "d": 6, "BW": 98, "PR": 1 },
+
+    { "s": 3, "d": 4, "BW": 92, "PR": 1 },
+    { "s": 4, "d": 5, "BW": 100, "PR": 1 },
+    { "s": 5, "d": 6, "BW": 108, "PR": 1 },
+    { "s": 6, "d": 3, "BW": 97, "PR": 1 },
+
+    { "s": 7, "d": 8, "BW": 100, "PR": 1 },
+    { "s": 7, "d": 9, "BW": 90, "PR": 1 },
+    { "s": 7, "d": 10, "BW": 110, "PR": 1 },
+    { "s": 7, "d": 11, "BW": 95, "PR": 1 },
+
+    { "s": 8, "d": 9, "BW": 102, "PR": 1 },
+    { "s": 9, "d": 10, "BW": 98, "PR": 1 },
+    { "s": 10, "d": 11, "BW": 105, "PR": 1 },
+    { "s": 11, "d": 8, "BW": 97, "PR": 1 },
+
+    { "s": 12, "d": 13, "BW": 100, "PR": 1 },
+    { "s": 12, "d": 14, "BW": 95, "PR": 1 },
+    { "s": 12, "d": 15, "BW": 105, "PR": 1 },
+    { "s": 12, "d": 16, "BW": 98, "PR": 1 },
+
+    { "s": 13, "d": 14, "BW": 97, "PR": 1 },
+    { "s": 14, "d": 15, "BW": 103, "PR": 1 },
+    { "s": 15, "d": 16, "BW": 100, "PR": 1 },
+    { "s": 16, "d": 13, "BW": 96, "PR": 1 }
   ]
+  
 }

@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
+import random
+
 from yafs.core import Sim
 from yafs.application import create_applications_from_json
 from yafs.topology import Topology
@@ -26,32 +28,10 @@ from yafs.population import Statical
 from yafs.placement import Placement
 from yafs.path_routing import DeviceSpeedAwareRouting
 from yafs.distribution import deterministic_distribution
+from yafs.distribution import exponential_distribution
 from yafs.application import fractional_selectivity
-from simpleSelection import MinimunPath
 from simpleSelection import MinimumLatenceNBd
 from yafs.population import Population
-
-class CloudPlacement(Placement):
-    def initial_allocation(self, sim, app_name):
-        value = {"mytag": "cloud"}
-        cloud_nodes = sim.topology.find_IDs(value)
-        app = sim.apps[app_name]
-        services = app.services
-        for module in services:
-            if module in self.scaleServices:
-                for node in cloud_nodes:
-                    sim.deploy_module(app_name, module, services[module], [node])
-
-class EdgePlacement(Placement):
-    def initial_allocation(self, sim, app_name):
-        value = {"mytag": "edge"}
-        edge_nodes = sim.topology.find_IDs(value)
-        app = sim.apps[app_name]
-        services = app.services
-        for module in services:
-            if module in self.scaleServices:
-                for node in edge_nodes:
-                    sim.deploy_module(app_name, module, services[module], [node])
 
 class EdgeCloudPlacement(Placement):
     def initial_allocation(self, sim, app_name):
@@ -59,6 +39,8 @@ class EdgeCloudPlacement(Placement):
         services = app.services
         cloud_nodes = sim.topology.find_IDs({"mytag": "cloud"})
         edge_nodes = sim.topology.find_IDs({"mytag": "edge"})
+        fog_nodes = sim.topology.find_IDs({"mytag": "fog"})
+
 
         for module in services:
             if module in self.scaleServices:
@@ -66,20 +48,22 @@ class EdgeCloudPlacement(Placement):
                     sim.deploy_module(app_name, module, services[module], [node])
                 for node in edge_nodes:
                     sim.deploy_module(app_name, module, services[module], [node])
+                for node in fog_nodes:
+                    sim.deploy_module(app_name, module, services[module], [node])
 
 
-with open("topotest.json") as f:
+with open("topo.json") as f:
     topology_json = json.load(f)
 
     
-
 # Création de la topologie
 t = Topology()
 t.load_all_node_attr(topology_json)
     
-#print("Nodes:", t.G.nodes(data=True))
-#print("Edges:", t.G.edges(data=True))
-
+node_load = {}
+for n in t.G.nodes():
+    node_load[n] = 0
+    
 def create_application():
     # APLICATION
     a = Application(name="SimpleCase")
@@ -90,8 +74,8 @@ def create_application():
                    {"Actuator": {"Type": Application.TYPE_SINK}}
                    ])
     
-    m_a = Message("M.A", "Sensor", "ServiceA", instructions=20*10**6, bytes=1000)
-    m_b = Message("M.B", "ServiceA", "Actuator", instructions=30*10**6, bytes=500)
+    m_a = Message("M.A", "Sensor", "ServiceA", instructions=600000000, bytes=1000)
+    m_b = Message("M.B", "ServiceA", "Actuator", instructions=10000000, bytes=500)
 
     a.add_source_messages(m_a)
     
@@ -111,7 +95,8 @@ app = create_application()
 pop = Statical("Statical")
 
 # Source
-dDistribution = deterministic_distribution(name="Deterministic",time=100)
+seed = random.randint(0, 10**9)
+dDistribution = exponential_distribution(name="poisson",lambd=1,seed=seed)
 pop.set_src_control({
     "model": "sensor-device",
     "number": 1,
@@ -132,8 +117,8 @@ placement = EdgeCloudPlacement("edgecloud")
 placement.scaleService({"ServiceA": 1})
 
 
-selectorPath = MinimumLatenceNBd()
-s = Sim(t,default_results_path="sim_trace")#on devrait pouvoir ajouter le chemin d'un répertoire pour stocker les résultats  
+selectorPath = MinimumLatenceNBd(node_load)
+s = Sim(t,default_results_path="sim_trace_algo")
 simulation_time = 1000
 s.deploy_app2(app, placement, pop, selectorPath)
 

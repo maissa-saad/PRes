@@ -1,0 +1,11 @@
+\frac{N}{IPT} + \sum (PR + \frac{M}{BD}) + \alpha E
+
+\begin{aligned}
+N & : \text{Instruction par message} \\
+IPT & : \text{Instruction par seconde} \\
+PR & : \text{Temps de propagation} \\
+M & : \text{Taille du message} \\
+BD & : \text{Bande passante} \\
+\alpha & : \text{coefficient ...} \\
+E & : \text{Energie}
+\end{aligned}
