@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Algorithme de sélection — Edge / Fog / Cloud
 
 > **Avant de lancer quoi que ce soit ici**, assurez-vous d'avoir déjà exécuté `script.sh` dans le dossier `PROJET_13_tests/`. C'est lui qui installe tout.
