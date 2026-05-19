@@ -51,7 +51,3 @@ Les courbes sont sauvegardées dans `results_algo/` :
 | `05_charge_cumulee.png` | L'évolution de la charge sur chaque nœud au fil du temps |
 
 Les données brutes sont dans `sim_trace_algo.csv` (événements de calcul) et `sim_trace_algo_link.csv` (événements réseau).
-=======
-# PRes
-Placement et orchestration de services dans le Edge–Fog–Cloud avec le simulateur YAFS
->>>>>>> 9fcf0810492c9798e137297828c8e976edb6d240
